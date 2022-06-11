@@ -2,7 +2,7 @@ package javaapplication2;
 
 import java.util.Scanner;
 
-public class JavaApplication2 {
+public class PROJETOJAVASEMANA6 {
 
     public static void main(String[] args) {
 
@@ -10,21 +10,21 @@ public class JavaApplication2 {
 
         }
         char menu = 's';
-        double cotacaoDolar;
+        float cotacaoDolar;
         double conversaodollar;
-        double valorreal;
-        double valordollar;
-        double conversaoreal;
-        double valorf;
-        double calculocelsius;
-        double valorc;
-        double calculofahr;
+        float valorreal;
+        float valordollar;
+        float conversaoreal;
+        float valorf;
+        float calculocelsius;
+        float valorc;
+        float calculofahr;
         //variável escolher opção 
         int escolhaopcao;
 
         Scanner leia = new Scanner(System.in);
         System.out.print("INFORME A COTACAO DO DOLAR: ");
-        cotacaoDolar = leia.nextDouble();
+        cotacaoDolar = leia.nextFloat();
 
         while (menu == 's' || menu == 's') {
             System.out.println("ESCOLHA UMA DAS OPÇÕES A SEGUIR");
@@ -41,32 +41,33 @@ public class JavaApplication2 {
 
                 case 1:
                     System.out.println("INFORME O VALOR EM REAIS: ");
-                    valorreal = leia.nextDouble();
+                    valorreal = leia.nextFloat();
                     conversaodollar = valorreal / cotacaoDolar;
-                    System.out.println("o valor em dolar é: " + (conversaodollar));
+                    System.out.println("o valor em dolar é: U$$5" + String.format("%.2f",  conversaodollar) );
+                   
                     break;
                 case 2:
                     System.out.println("INFORME O VALOR EM DOLAR: ");
-                    valordollar = leia.nextDouble();
+                    valordollar = leia.nextFloat();
                     conversaoreal = valordollar * cotacaoDolar;
-                    System.out.println("o valor em real é: " + (conversaoreal));
+                    System.out.println("o valor em real é: R$" + String.format("%.2f",  conversaoreal) );
                     break;
                 case 3:
                     System.out.println("INFORME A TEMPERATURA EM GRAU CELSIUS: ");
-                    valorc = leia.nextDouble();
+                    valorc = leia.nextFloat();
                     calculofahr = (valorc * 9 / 5) + 32;
-                    System.out.println("TEMPERATURA EM GRAU FAHRENHEIT: " + (calculofahr));
+                    System.out.println("TEMPERATURA EM GRAU FAHRENHEIT É: " + String.format("%.2f",calculofahr)+ " °F");
                     break;
                 case 4:
                     System.out.println("INFORME A TEMPERATURA EM GRAU FAHRENHEIT: ");
-                    valorf = leia.nextDouble();
+                    valorf = leia.nextFloat();
                     calculocelsius = (valorf - 32) * 5 / 9;
-                    System.out.println("TEMPERATURA EM GRAU CELSIUS: " + (calculocelsius));
+                    System.out.println("TEMPERATURA EM GRAU CELSIUS É: " + String.format("%.2f",calculocelsius)+ " °C" );
                     break;
                 default:
                     break;
             }
-            System.out.println("Deseja continuar? s ou n");
+            System.out.println("DESEJA REALIZAR OUTRA CONVERSÃO? s ou n");
             menu = leia.next().charAt(0);
 
         }
